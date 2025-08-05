@@ -51,30 +51,3 @@ install(TARGETS hungarian
 install(FILES include/hungarian.h
     DESTINATION include
 )
-
-# 导出目标
-install(EXPORT HungarianAlgorithmTargets
-    FILE HungarianAlgorithmTargets.cmake
-    NAMESPACE HungarianAlgorithm::
-    DESTINATION lib/cmake/HungarianAlgorithm
-)
-
-# 创建配置文件
-include(CMakePackageConfigHelpers)
-write_basic_package_version_file(
-    HungarianAlgorithmConfigVersion.cmake
-    VERSION ${PROJECT_VERSION}
-    COMPATIBILITY AnyNewerVersion
-)
-
-configure_package_config_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/HungarianAlgorithmConfig.cmake.in
-    ${CMAKE_CURRENT_BINARY_DIR}/HungarianAlgorithmConfig.cmake
-    INSTALL_DESTINATION lib/cmake/HungarianAlgorithm
-)
-
-install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/HungarianAlgorithmConfig.cmake
-    ${CMAKE_CURRENT_BINARY_DIR}/HungarianAlgorithmConfigVersion.cmake
-    DESTINATION lib/cmake/HungarianAlgorithm
-)

@@ -10,6 +10,12 @@ out/
 *.dll
 *.dylib
 
+# 可执行文件
+hungarian_example
+test_hungarian
+hungarian_test
+debug_test
+
 # Visual Studio
 .vs/
 *.vcxproj
