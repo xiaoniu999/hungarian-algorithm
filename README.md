@@ -45,6 +45,7 @@ hungarian-algorithm/
 
 ### 构建项目 / Build Project
 
+#### 方法1: 使用CMake (推荐)
 ```bash
 # 创建构建目录
 mkdir build && cd build
@@ -54,6 +55,27 @@ cmake ..
 
 # 编译项目
 cmake --build .
+```
+
+#### 方法2: 使用编译脚本 (Windows)
+```powershell
+# PowerShell 脚本
+.\compile.ps1
+
+# 或使用批处理文件
+compile.bat
+```
+
+#### 方法3: 手动编译
+```bash
+# 编译库文件
+g++ -std=c++17 -c src/hungarian.cpp -Iinclude -o build/hungarian.o
+
+# 编译示例程序
+g++ -std=c++17 examples/main.cpp build/hungarian.o -Iinclude -o build/hungarian_example
+
+# 编译测试程序
+g++ -std=c++17 tests/test_hungarian.cpp build/hungarian.o -Iinclude -o build/hungarian_test
 ```
 
 ### 运行示例 / Run Examples
